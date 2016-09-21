@@ -56,9 +56,9 @@ function createTemplate(data){
             <div class="container">
                 <div> <a href="/"> Home </a></div>
                 <hr/>
+                <div class="center text-big bold"> ${heading2}. </div>
                 <h3> ${heading1} </h3>
                 <div> ${date} </div>
-                <div class="center text-big bold"> ${heading2}. </div>
                 <div> ${content} </div>
             </div>
         </body>
