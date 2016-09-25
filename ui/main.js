@@ -9,5 +9,5 @@ button.onclick=function(){
     
     //make request to counter endpoint
     //capture the response and store it in a variable
-    //Render the variable in the coreect span
+    //Render the variable in the correct span
 };
