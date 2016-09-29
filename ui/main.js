@@ -8,6 +8,6 @@ button.onclick=function(){
     
     // This code executes without making a request to the counter endpoint
     counter = counter+1;
-    var span=document.getElementById('count');
-    span.innerHTML=counter.toString();
+    var span = document.getElementById('count');
+    span.innerHTML = counter.toString();
 };
