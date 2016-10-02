@@ -19,6 +19,7 @@ button.onclick=function(){
         }
     };
     //make request to counter endpoint
+    var counter=button.value;
     request.open('GET', 'https://gpadmasu.imad.hasura-app.io/counter', true);
     request.send(null);
     
