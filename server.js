@@ -90,7 +90,7 @@ app.get('/submit-name/:name', function(req,res){
 }); */
 
 /* This code with QUERY parameter needs to appear before the 
-app.get('/:articleName'...*/
+app.get('/:articleName'.... This is due to Express and the way it handles URLs*/
 app.get('/submit-name', function(req,res){
     //Get the names from the request
     var name = req.query.name;
