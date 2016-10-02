@@ -79,7 +79,7 @@ app.get('/counter', function (req, res) {
 });
 
 var names=[];
-/* This commented code can appear even towards the end 
+/* This commented code can appear even towards the end */
 app.get('/submit-name/:name', function(req,res){
     //Get the names from the request
     var name = req.params.name;
@@ -87,18 +87,19 @@ app.get('/submit-name/:name', function(req,res){
     // we will use JavaScript Object Notation(JSON)
     names.push(name);
     res.send(JSON.stringify(names));
-}); */
+}); 
 
 /* This code with QUERY parameter needs to appear before the 
-app.get('/:articleName'.... This is due to Express and the way it handles URLs*/
-app.get('/submit-name', function(req,res){
+app.get('/:articleName'.... This is due to Express and the way it handles URLs.
+app.get('/submit-name', function(req,res){// /submit-name/name?name-xxxx
     //Get the names from the request
     var name = req.query.name;
     //Now to convert this array to a string,
     // we will use JavaScript Object Notation(JSON)
     names.push(name);
     res.send(JSON.stringify(names));
-});
+});*/
+
 app.get('/:articleName', function (req, res) {
     var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
