@@ -106,7 +106,7 @@ app.get('/article-three', function (req, res) {
 }); */
 
 var names=[];
-app.get('/sumbit-name/:name', function(req,res){
+app.get('/submit-name/:name', function(req,res){
     //Get the names from the request
     var name = req.params.name;
     //Now to convert this array to a string,
