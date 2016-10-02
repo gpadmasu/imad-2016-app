@@ -78,6 +78,27 @@ app.get('/counter', function (req, res) {
     res.send(counter.toString());
 });
 
+var names=[];
+/* This commented code can appear even towards the end 
+app.get('/submit-name/:name', function(req,res){
+    //Get the names from the request
+    var name = req.params.name;
+    //Now to convert this array to a string,
+    // we will use JavaScript Object Notation(JSON)
+    names.push(name);
+    res.send(JSON.stringify(names));
+}); */
+
+/* This code with QUERY parameter needs to appear before the 
+app.get('/:articleName'...*/
+app.get('/submit-name', function(req,res){
+    //Get the names from the request
+    var name = req.query.name;
+    //Now to convert this array to a string,
+    // we will use JavaScript Object Notation(JSON)
+    names.push(name);
+    res.send(JSON.stringify(names));
+});
 app.get('/:articleName', function (req, res) {
     var articleName = req.params.articleName;
     res.send(createTemplate(articles[articleName]));
@@ -105,17 +126,6 @@ app.get('/article-three', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 }); */
 
-var names=[];
-app.get('/submit-name/:name', function(req,res){
-    //Get the names from the request
-    var name = req.params.name;
-    //Now to convert this array to a string,
-    // we will use JavaScript Object Notation(JSON)
-    names.push(name);
-    res.send(JSON.stringify(names));
-});
-
-
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
@@ -126,7 +136,6 @@ app.get('/ui/madi.png', function (req, res) {
 app.get('/ui/mypic-edex.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'mypic-edex.jpg'));
 });
-
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
