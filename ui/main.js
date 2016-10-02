@@ -1,5 +1,6 @@
 //console.log('Loaded!');
-// counter=0;
+var button=document.getElementById('counter');
+var counter=0;
 button.onclick=function(){
     //Create a request object
     var request=new XMLHttpRequest();
@@ -18,7 +19,6 @@ button.onclick=function(){
         }
     };
     //make request to counter endpoint
-    var button=document.getElementById('counter');
     request.open('GET', 'https://gpadmasu.imad.hasura-app.io/counter', true);
     request.send(null);
     
