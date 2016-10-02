@@ -116,6 +116,15 @@ app.get('/ui/mypic-edex.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'mypic-edex.jpg'));
 });
 
+app.get('/sumbit-name/:name', function(req,res){
+    //Get the names from the request
+    var name= req.params.name;
+    //Now to convert this array to a string,
+    // we will use JavaScript Object Notation(JSON)
+    names.push(name);
+    res.send(JSON.stringify(names));
+})
+
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
