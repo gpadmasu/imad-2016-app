@@ -13,14 +13,12 @@ button.onclick=function(){
                 //200 means request successfully completed
                 var counter=request.responseText;
                  //Render the variable in the correct span
-                var span=document.getElementById('count');
+                var span=document.getElementById('counter');
                 span.innerHTML=counter.toString();
             }
         }
     };
     //make request to counter endpoint
-    var span=document.getElementById('count');
-    span.innerHTML=counter.toString();
     request.open('GET', 'https://gpadmasu.imad.hasura-app.io/counter', true);
     request.send(null);
     
