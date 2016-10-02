@@ -116,9 +116,10 @@ app.get('/ui/mypic-edex.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'mypic-edex.jpg'));
 });
 
+var names=[];
 app.get('/sumbit-name/:name', function(req,res){
     //Get the names from the request
-    var name= req.params.name;
+    var name = req.params.name;
     //Now to convert this array to a string,
     // we will use JavaScript Object Notation(JSON)
     names.push(name);
