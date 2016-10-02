@@ -1,5 +1,4 @@
 //console.log('Loaded!');
-var button=document.getElementById('counter');
 var counter=0;
 button.onclick=function(){
     //Create a request object
@@ -19,6 +18,7 @@ button.onclick=function(){
         }
     };
     //make request to counter endpoint
+    var button=document.getElementById('counter');
     request.open('GET', 'https://gpadmasu.imad.hasura-app.io/counter', true);
     request.send(null);
     
@@ -28,8 +28,6 @@ button.onclick=function(){
     span.innerHTML = counter.toString(); */
 };
 //submit name
-var nameInput=document.getElementById('name');
-var name=nameInput.value;
 var submit=document.getElementById('name');
 submit.onclick = function(){
     
@@ -54,7 +52,9 @@ submit.onclick = function(){
             }
         }
     };
-    //make request to counter endpoint
+    //make request to counter 
+    var nameInput=document.getElementById('name');
+    var name=nameInput.value;
     request.open('GET', 'https://gpadmasu.imad.hasura-app.io/submit-name?name='+name, true);
     request.send(null);
 };
