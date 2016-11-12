@@ -69,6 +69,19 @@ function createTemplate(data){
 return htmlTemplate;
 }
 
+function hash(input,salt){
+    var hashed=crypto.pbkdf25Sync(input,'salt',10000,512,'sha512');
+    // return hashed and make it printable and readable on our screen 
+    return hashed.toString('hex'); 
+}
+
+// createEndpoint
+app.get('/hash/:input', function(req,res) {
+    //var hashedString=hash(req.params.input,salt);
+    var hashedString=hash(req.params.input,'this-is-some-random-string');
+    res.send(hashedString);
+});
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
