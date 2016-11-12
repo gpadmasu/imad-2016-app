@@ -70,7 +70,7 @@ return htmlTemplate;
 }
 
 function hash(input,salt){
-    var hashed=crypto.pbkdf25Sync(input,'salt',10000,512,'sha512');
+    var hashed=crypto.pbkdf2Sync(input,'salt',10000,512,'sha512');
     // return hashed and make it printable and readable on our screen 
     return hashed.toString('hex'); 
 }
